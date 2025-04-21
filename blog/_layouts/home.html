@@ -1,0 +1,28 @@
+<!--
+ * @Author: SOMMER
+ * @Date: 2025-04-20 19:33:02
+ * @LastEditTime: 2025-04-21 00:10:01
+ * @FilePath: \blog\_layouts\home.html
+-->
+---
+layout: default
+---
+
+{{ content }}
+
+<h2 class="post-list-heading">{{ page.list_title | default: "最新文章" }}</h2>
+<ul class="post-list">
+  {% for post in site.posts %}
+    <li>
+      <h3>
+        <a class="post-link" href="{{ post.url | relative_url }}">
+          {{ post.title | escape }}
+        </a>
+      </h3>
+      <span class="post-meta">{{ post.date | date: "%Y年%m月%d日" }}</span>
+      {% if post.excerpt %}
+        <p>{{ post.excerpt }}</p>
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul> 

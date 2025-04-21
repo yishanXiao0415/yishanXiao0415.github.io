@@ -1,0 +1,44 @@
+<!--
+ * @Author: SOMMER
+ * @Date: 2025-04-20 19:32:45
+ * @LastEditTime: 2025-04-21 00:08:41
+ * @FilePath: \blog\_layouts\default.html
+-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrapper">
+      <a class="site-title" href="{{ "/" | relative_url }}">{{ site.title }}</a>
+      <nav class="site-nav">
+        <a class="page-link" href="{{ "/" | relative_url }}"><i class="fa fa-home"></i> 首页</a>
+        <a class="page-link" href="{{ "/map" | relative_url }}"><i class="fa fa-map"></i> 地图</a>
+        <a class="page-link" href="{{ "/study" | relative_url }}"><i class="fa fa-book"></i> 学习室</a>
+        <a class="page-link" href="{{ "/message" | relative_url }}"><i class="fa fa-comment"></i> 传声室</a>
+        <a class="page-link" href="{{ "/gallery" | relative_url }}"><i class="fa fa-image"></i> 博物馆</a>
+        <a class="page-link" href="{{ "/thoughts" | relative_url }}"><i class="fa fa-leaf"></i> 后花园</a>
+        <a class="page-link" href="{{ "/about" | relative_url }}"><i class="fa fa-user"></i> 小窝</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-content">
+    <div class="wrapper">
+      {{ content }}
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrapper">
+      <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}</p>
+    </div>
+  </footer>
+</body>
+</html> 
